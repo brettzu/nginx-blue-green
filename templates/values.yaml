@@ -1,0 +1,14 @@
+name: color-bg
+stageName: color-bg-stage
+primaryName: color-bg-primary
+host: nginx-demo.harness.io
+image: <+artifact.image>
+splitTraffic: false
+
+replicas: 2
+namespace: <+infra.namespace>
+
+frontend:
+  uiPath: blue-green
+  title: Blue / Green - Nginx Traffic Shift
+  image: us.gcr.io/sales-209522/continuous-requests:110
